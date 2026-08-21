@@ -43,7 +43,7 @@ body {
     radial-gradient(circle at 15% 10%, rgba(37, 99, 235, 0.09), transparent 30%),
     var(--bg);
   color: var(--text);
-  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: "DM Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
@@ -2042,4 +2042,83 @@ p {
     opacity: 1;
     transform: none;
   }
+}
+
+/* =========================
+   MARCA E PORTFÓLIO FINAL
+========================= */
+.brand-logo {
+    width: 240px;
+    height: auto;
+    max-height: none;
+    object-fit: contain;
+    display: block;
+}
+.footer-brand .brand-logo{
+  width:220px;
+}
+.project-visual{
+  background-color:#0e1420;
+  background-size:cover;
+  background-position:center;
+}
+.project-barber{
+  background-image:
+    linear-gradient(180deg,rgba(8,11,18,.08),rgba(8,11,18,.8)),
+    url("../projetos/blackcut/images/foto-1.jpg");
+}
+.project-ac{
+  background-image:
+    linear-gradient(180deg,rgba(8,11,18,.08),rgba(8,11,18,.78)),
+    url("../projetos/climapro/images/foto-1.webp");
+}
+.project-auto{
+  background-image:
+    linear-gradient(180deg,rgba(8,11,18,.08),rgba(8,11,18,.78)),
+    url("../projetos/prime-motors/images/foto-1.jpeg");
+}
+.project-barber::before,
+.project-ac::before,
+.project-auto::before,
+.project-realestate::before{
+  display:none;
+}
+.projects-grid{
+  grid-template-columns:repeat(3,1fr);
+}
+@media(max-width:900px){
+  .projects-grid{grid-template-columns:1fr}
+  .brand-logo{width:160px}
+}
+
+
+/* =========================
+   TIPOGRAFIA WEB KIVORA
+========================= */
+h1,
+h2,
+h3,
+.brand-copy strong,
+.button,
+.eyebrow {
+  font-family: "Sora", "DM Sans", sans-serif;
+}
+
+body,
+p,
+a,
+input,
+select,
+textarea,
+label {
+  font-family: "DM Sans", system-ui, sans-serif;
+}
+
+h1,
+h2 {
+  font-weight: 700;
+}
+
+h3 {
+  font-weight: 600;
 }
