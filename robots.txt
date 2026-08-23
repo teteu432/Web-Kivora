@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://lange-pages.vercel.app/sitemap.xml
+Sitemap: https://webkivora.com/sitemap.xml

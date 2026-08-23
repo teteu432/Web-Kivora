@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agendamento | Auréa Clínica Estética</title>
+  <meta name="description" content="Agendamento demonstrativo da Auréa Clínica Estética.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/agendamento.css">
+  <script defer src="js/agendamento.js"></script>
+</head>
+<body>
+  <header class="booking-header">
+    <a class="brand" href="index.html"><span class="brand-mark">A</span><span><strong>Auréa</strong><small>Clínica Estética</small></span></a>
+    <span class="demo-badge">Demonstração Web Kivora</span>
+  </header>
+
+  <main class="booking-shell">
+    <section class="booking-intro">
+      <span class="eyebrow">AGENDAMENTO</span>
+      <h1>Agende seu <em>momento.</em></h1>
+      <p>Escolha o tratamento, a profissional e o horário que melhor combina com você.</p>
+    </section>
+
+    <div class="progress-wrap">
+      <div class="progress-bar"><span id="progressFill"></span></div>
+      <div class="progress-steps" id="progressSteps">
+        <span class="active">01 Tratamento</span><span>02 Especialista</span><span>03 Data</span><span>04 Horário</span><span>05 Seus dados</span>
+      </div>
+    </div>
+
+    <section class="booking-card">
+      <div class="booking-main">
+        <div class="step-panel active" data-step="1">
+          <div class="step-title"><span>01</span><div><h2>Qual tratamento você procura?</h2><p>Selecione uma opção para começar.</p></div></div>
+          <div class="service-grid" id="serviceGrid"></div>
+        </div>
+
+        <div class="step-panel" data-step="2">
+          <div class="step-title"><span>02</span><div><h2>Escolha sua especialista</h2><p>Ou deixe que a Auréa encontre uma profissional disponível.</p></div></div>
+          <div class="professional-grid" id="professionalGrid"></div>
+        </div>
+
+        <div class="step-panel" data-step="3">
+          <div class="step-title"><span>03</span><div><h2>Escolha a melhor data</h2><p>Domingos ficam indisponíveis automaticamente.</p></div></div>
+          <div class="date-toolbar"><button id="prevDates" aria-label="Datas anteriores">←</button><strong id="dateRangeLabel"></strong><button id="nextDates" aria-label="Próximas datas">→</button></div>
+          <div class="date-grid" id="dateGrid"></div>
+        </div>
+
+        <div class="step-panel" data-step="4">
+          <div class="step-title"><span>04</span><div><h2>Escolha um horário</h2><p>Horários ocupados aparecem indisponíveis.</p></div></div>
+          <div class="period"><h3>Manhã</h3><div class="time-grid" id="morningTimes"></div></div>
+          <div class="period"><h3>Tarde</h3><div class="time-grid" id="afternoonTimes"></div></div>
+          <div class="availability-note"><i></i><span>Disponível</span><i class="busy"></i><span>Ocupado</span></div>
+        </div>
+
+        <div class="step-panel" data-step="5">
+          <div class="step-title"><span>05</span><div><h2>Seus dados</h2><p>Última etapa antes da confirmação.</p></div></div>
+          <form id="clientForm" class="client-form" novalidate>
+            <label>Nome completo<input type="text" id="clientName" autocomplete="name" required placeholder="Seu nome"></label>
+            <div class="form-row"><label>WhatsApp<input type="tel" id="clientPhone" autocomplete="tel" required placeholder="(11) 99999-9999"></label><label>E-mail<input type="email" id="clientEmail" autocomplete="email" placeholder="voce@email.com"></label></div>
+            <label>Observações<textarea id="clientNotes" rows="4" placeholder="Se desejar, deixe uma observação..."></textarea></label>
+            <label class="checkbox"><input type="checkbox" id="privacyCheck" required><span>Li e concordo com a Política de Privacidade demonstrativa.</span></label>
+          </form>
+        </div>
+
+        <div class="booking-nav"><button class="back-btn" id="backBtn" disabled>Voltar</button><button class="next-btn" id="nextBtn" disabled>Continuar</button></div>
+      </div>
+
+      <aside class="summary-card">
+        <span class="eyebrow">RESUMO</span><h3>Seu agendamento</h3>
+        <dl><div><dt>Tratamento</dt><dd id="summaryService">—</dd></div><div><dt>Especialista</dt><dd id="summaryProfessional">—</dd></div><div><dt>Data</dt><dd id="summaryDate">—</dd></div><div><dt>Horário</dt><dd id="summaryTime">—</dd></div><div><dt>Duração</dt><dd id="summaryDuration">—</dd></div></dl>
+        <div class="summary-price"><span>Valor estimado</span><strong id="summaryPrice">—</strong></div>
+        <small>Projeto demonstrativo. Nenhuma cobrança será realizada.</small>
+      </aside>
+    </section>
+  </main>
+
+  <div class="success-screen" id="successScreen" aria-hidden="true">
+    <div class="success-card"><div class="success-icon">✓</div><span class="eyebrow">AGENDAMENTO CONFIRMADO</span><h2>Tudo certo, <span id="successName"></span>!</h2><p>Seu horário foi reservado nesta demonstração.</p><div class="success-details" id="successDetails"></div><div class="booking-code"><span>Código</span><strong id="successCode"></strong></div><div class="success-actions"><a class="primary" id="successWhatsapp" target="_blank" rel="noopener">Falar pelo WhatsApp</a><a class="secondary" href="index.html">Voltar para o início</a><a class="secondary" href="admin.html">Ver no painel admin</a></div></div>
+  </div>
+</body>
+</html>

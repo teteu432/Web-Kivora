@@ -2062,10 +2062,17 @@ p {
   background-size:cover;
   background-position:center;
 }
-.project-barber{
+.project-aurea {
   background-image:
-    linear-gradient(180deg,rgba(8,11,18,.08),rgba(8,11,18,.8)),
-    url("../projetos/blackcut/images/foto-1.jpg");
+    linear-gradient(
+      180deg,
+      rgba(8,11,18,.08),
+      rgba(8,11,18,.78)
+    ),
+    url("https://versatilis.com.br/wp-content/uploads/2023/10/equipamentos-para-clinica-de-estetica-scaled.jpg");
+
+  background-size: cover;
+  background-position: center;
 }
 .project-ac{
   background-image:

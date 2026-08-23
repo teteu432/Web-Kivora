@@ -1,0 +1,24 @@
+{
+  "redirects": [
+    {
+      "source": "/Projetos/blackout/:path*",
+      "destination": "/projetos/blackcut/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/Projetos/blackcut/:path*",
+      "destination": "/projetos/blackcut/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/Projetos/climapro/:path*",
+      "destination": "/projetos/climapro/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/Projetos/prime-motors/:path*",
+      "destination": "/projetos/prime-motors/:path*",
+      "permanent": true
+    }
+  ]
+}

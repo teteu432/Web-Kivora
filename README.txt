@@ -1,21 +1,31 @@
-WEB KIVORA
+WEB KIVORA — PROJETO CORRIGIDO
 
-Como executar:
+Como executar localmente:
 1. Abra a pasta no VS Code.
-2. Abra o index.html com Live Server, ou abra o arquivo diretamente no navegador.
+2. Use o Live Server ou abra o index.html no navegador.
 
-Logo:
-- O layout atual usa um K textual provisório.
-- Quando tiver a logo final, salve-a em assets/images/ e substitua a marca provisória no header/footer por uma tag <img>.
+Estrutura correta do portfólio:
+- projetos/blackcut/
+- projetos/climapro/
+- projetos/prime-motors/
 
-Portfólio:
-- Os cards atuais usam ilustrações feitas em CSS para funcionar sem imagens externas.
-- Você pode trocar cada bloco visual por imagens reais em assets/images/.
+IMPORTANTE — CORRIGIR MAIÚSCULAS/MINÚSCULAS NO GIT:
+O repositório antigo rastreava a pasta como "Projetos" (P maiúsculo), mas o site e o CSS usam "projetos" (p minúsculo).
+Em Windows, o Git pode não perceber essa mudança sozinho. Depois de substituir os arquivos, execute na raiz do repositório:
+
+  git rm -r --cached Projetos
+  git add projetos
+  git add .
+  git commit -m "Corrige caminhos do portfolio e SEO"
+  git push
+
+Esses comandos fazem o Git registrar corretamente a pasta minúscula sem apagar os arquivos locais.
 
 WhatsApp:
-- Abra js/script.js.
-- Configure:
-  const WHATSAPP_NUMBER = "5511999999999";
+- O número utilizado pelo formulário fica em js/script.js, na constante WHATSAPP_NUMBER.
 
-Observação:
-- Use DDI + DDD + número, somente dígitos.
+SEO:
+- Domínio canônico: https://webkivora.com/
+- robots.txt e sitemap.xml ficam na raiz do projeto.
+- Após publicar, envie https://webkivora.com/sitemap.xml no Google Search Console.
+- Depois, use Inspeção de URL para solicitar nova indexação da página inicial.

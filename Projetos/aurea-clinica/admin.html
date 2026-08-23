@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Painel Demonstrativo | Auréa</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/admin.css">
+  <script defer src="js/admin.js"></script>
+</head>
+<body>
+  <section class="login-screen" id="loginScreen">
+    <div class="login-art"><a class="brand light" href="index.html"><span class="brand-mark">A</span><span><strong>Auréa</strong><small>Clínica Estética</small></span></a><div><span class="eyebrow">PAINEL DEMONSTRATIVO</span><h1>Gestão simples.<br><em>Visão completa.</em></h1><p>Uma demonstração de como a clínica poderia acompanhar agenda, clientes e atendimentos.</p></div><small>Projeto Web Kivora • Dados fictícios</small></div>
+    <div class="login-form-wrap"><form id="loginForm" class="login-card"><span class="eyebrow">ACESSO</span><h2>Entrar no painel</h2><p>Use as credenciais demonstrativas abaixo.</p><div class="demo-creds"><strong>admin@aurea.com</strong><span>admin123</span></div><label>E-mail<input type="email" id="adminEmail" value="admin@aurea.com" required></label><label>Senha<input type="password" id="adminPassword" value="admin123" required></label><button type="submit">Entrar</button><a href="index.html">← Voltar ao site</a><p class="login-error" id="loginError"></p></form></div>
+  </section>
+
+  <div class="admin-app" id="adminApp" hidden>
+    <aside class="sidebar" id="sidebar">
+      <div><a class="brand" href="index.html"><span class="brand-mark">A</span><span><strong>Auréa</strong><small>Admin demo</small></span></a><nav id="adminNav"><button class="active" data-view="overview">▦ <span>Visão geral</span></button><button data-view="agenda">◷ <span>Agenda</span></button><button data-view="appointments">≡ <span>Agendamentos</span></button><button data-view="clients">◎ <span>Clientes</span></button><button data-view="treatments">✦ <span>Tratamentos</span></button><button data-view="settings">⚙ <span>Configurações</span></button></nav></div>
+      <div class="sidebar-bottom"><button id="resetDemo">↻ <span>Redefinir demonstração</span></button><button id="logoutBtn">↪ <span>Sair</span></button></div>
+    </aside>
+
+    <main class="admin-main">
+      <header class="admin-topbar"><button class="sidebar-toggle" id="sidebarToggle">☰</button><div><span id="todayLabel"></span><h1 id="viewTitle">Visão geral</h1></div><div class="admin-user"><span>AD</span><div><strong>Administrador</strong><small>Demonstração</small></div></div></header>
+
+      <section class="admin-view active" data-view="overview">
+        <div class="metrics" id="metrics"></div>
+        <div class="dashboard-grid"><article class="panel next-panel"><div class="panel-head"><div><span class="eyebrow">PRÓXIMO</span><h2>Próximo atendimento</h2></div></div><div id="nextAppointment"></div></article><article class="panel chart-panel"><div class="panel-head"><div><span class="eyebrow">SEMANA</span><h2>Movimento</h2></div></div><div class="bar-chart" id="barChart"></div></article></div>
+        <article class="panel"><div class="panel-head"><div><span class="eyebrow">HOJE</span><h2>Agenda de hoje</h2></div><button data-go="agenda">Ver agenda completa →</button></div><div class="agenda-list" id="todayAgenda"></div></article>
+      </section>
+
+      <section class="admin-view" data-view="agenda"><article class="panel"><div class="panel-head wrap"><div><span class="eyebrow">AGENDA</span><h2>Visualização diária</h2></div><label class="date-filter">Data<input type="date" id="agendaDate"></label></div><div class="agenda-list large" id="agendaList"></div></article></section>
+
+      <section class="admin-view" data-view="appointments"><article class="panel"><div class="panel-head wrap"><div><span class="eyebrow">GESTÃO</span><h2>Agendamentos</h2></div><div class="filters"><input type="search" id="searchFilter" placeholder="Buscar cliente ou código"><select id="statusFilter"><option value="">Todos os status</option><option>Confirmado</option><option>Pendente</option><option>Concluído</option><option>Cancelado</option></select></div></div><div class="table-wrap"><table><thead><tr><th>Código</th><th>Cliente</th><th>Tratamento</th><th>Profissional</th><th>Data</th><th>Horário</th><th>Status</th><th>Ações</th></tr></thead><tbody id="appointmentsTable"></tbody></table></div></article></section>
+
+      <section class="admin-view" data-view="clients"><article class="panel"><div class="panel-head"><div><span class="eyebrow">RELACIONAMENTO</span><h2>Clientes</h2></div></div><div class="client-grid" id="clientGrid"></div></article></section>
+
+      <section class="admin-view" data-view="treatments"><article class="panel"><div class="panel-head"><div><span class="eyebrow">CATÁLOGO</span><h2>Tratamentos</h2></div></div><div class="table-wrap"><table><thead><tr><th>Tratamento</th><th>Categoria</th><th>Duração</th><th>Valor</th><th>Status</th></tr></thead><tbody id="treatmentsTable"></tbody></table></div></article></section>
+
+      <section class="admin-view" data-view="settings"><article class="panel settings-panel"><div class="panel-head"><div><span class="eyebrow">DEMONSTRAÇÃO</span><h2>Configurações</h2></div></div><div class="settings-grid"><label>Nome da clínica<input value="Auréa Clínica Estética"></label><label>WhatsApp<input value="(11) 99999-0000"></label><label>Instagram<input value="@aureaclinica"></label><label>Horário<input value="Seg–Sex 09h–19h • Sáb 09h–16h"></label></div><button class="save-demo" type="button">Salvar alterações demonstrativas</button></article></section>
+    </main>
+  </div>
+
+  <div class="confirm-modal" id="confirmModal" aria-hidden="true"><div class="confirm-card"><h3 id="confirmTitle">Confirmar ação</h3><p id="confirmText"></p><div><button class="secondary" id="cancelConfirm">Cancelar</button><button class="danger" id="acceptConfirm">Confirmar</button></div></div></div>
+  <div class="toast" id="toast"></div>
+</body>
+</html>
