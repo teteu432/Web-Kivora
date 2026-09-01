@@ -2069,7 +2069,7 @@ p {
       rgba(8,11,18,.08),
       rgba(8,11,18,.78)
     ),
-    url("../projetos/aurea-clinica/images/hero.webp");
+    url("/projetos/aurea-clinica/images/hero.webp");
 
   background-size: cover;
   background-position: center;
